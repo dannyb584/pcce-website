@@ -231,6 +231,41 @@
     .author-name { font-weight: 600; font-size: .9rem; }
     .author-role { font-size: .78rem; color: var(--muted); }
 
+    /* ── PUBLICATIONS ─────────────────────────────────────── */
+    #publications { background: var(--dark); }
+    #publications .section-tag { background: rgba(43,168,177,.15); color: var(--teal); }
+    #publications .section-title { color: var(--white); }
+    #publications .section-subtitle { color: rgba(255,255,255,.6); }
+    .pub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .pub-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius); padding: 1.75rem; transition: all .3s;
+      display: flex; flex-direction: column; gap: .75rem;
+    }
+    .pub-card:hover { background: rgba(43,168,177,.1); border-color: rgba(43,168,177,.3); transform: translateY(-3px); }
+    .pub-type {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(125,194,66,.15); color: var(--green);
+      font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      padding: .25rem .7rem; border-radius: 50px; width: fit-content;
+    }
+    .pub-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.4; }
+    .pub-card h3 a { color: var(--white); text-decoration: none; transition: color .2s; }
+    .pub-card h3 a:hover { color: var(--teal); }
+    .pub-meta { font-size: .78rem; color: rgba(255,255,255,.4); font-weight: 500; }
+    .pub-card p { font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.65; flex: 1; }
+    .pub-role {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(43,168,177,.15); color: var(--teal);
+      font-size: .75rem; font-weight: 600; padding: .3rem .75rem; border-radius: 50px;
+      width: fit-content; margin-top: auto;
+    }
+    .pub-card-featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(43,168,177,.15), rgba(125,194,66,.08));
+      border-color: rgba(43,168,177,.3);
+    }
+
     /* ── CONTACT ──────────────────────────────────────────── */
     #contact { background: var(--white); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; margin-top: 3rem; }
@@ -284,6 +319,8 @@
       .services-grid { grid-template-columns: 1fr; }
       .speaking-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
+      .pub-grid { grid-template-columns: 1fr; }
+      .pub-card-featured { grid-column: 1; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .form-row { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -305,6 +342,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#speaking">Speaking</a></li>
       <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#contact" class="nav-cta">Get in touch</a></li>
     </ul>
     <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
@@ -317,6 +355,7 @@
       <li><a href="#services" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Services</a></li>
       <li><a href="#speaking" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Speaking</a></li>
       <li><a href="#testimonials" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Reviews</a></li>
+      <li><a href="#publications" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Publications</a></li>
       <li><a href="#contact" onclick="toggleMenu()" style="color:var(--teal);font-weight:600;text-decoration:none;">Get in touch →</a></li>
     </ul>
   </div>
@@ -377,14 +416,14 @@
         </div>
         <div class="about-img-badge">
           <div class="num">RPS</div>
-          <div class="lbl">Board Member,<br>English Pharmacy Board</div>
+          <div class="lbl">Former Board Member,<br>English Pharmacy Board</div>
         </div>
       </div>
       <div class="about-content">
         <div class="section-tag">About Danny</div>
         <h2 class="section-title">Pharmacist. Educator. <span>Strategist.</span></h2>
         <p>Danny Bartlett is a national Key Opinion Leader and Consultant Pharmacist operating at the intersection of medicines optimisation, prescribing policy, workforce education, and healthcare strategy. As <strong>Clinical Lead for the Kent, Surrey &amp; Sussex Primary Care School (NHS England)</strong>, he holds regional oversight of a £3.16m training budget, directing multi-professional education across three Integrated Care Boards serving a combined population of 3.5 million.</p>
-        <p>An elected <strong>Board Member of the English Pharmacy Board (Royal Pharmaceutical Society)</strong> and <strong>Panel Member for the General Pharmaceutical Council's</strong> national accreditation process, Danny contributes at the highest levels of professional governance. He is also <strong>Deputy Course Lead and Senior Lecturer</strong> in Pharmacist Independent Prescribing at the University of Brighton, and is co-authoring a commissioned book on medicines management in primary care (publication 2026).</p>
+        <p>A <strong>former elected Board Member of the English Pharmacy Board (Royal Pharmaceutical Society, 2023–2026)</strong> and current <strong>Panel Member for the General Pharmaceutical Council's</strong> national accreditation process, Danny contributes at the highest levels of professional governance. He is also <strong>Deputy Course Lead and Senior Lecturer</strong> in Pharmacist Independent Prescribing at the University of Brighton, and co-author of a forthcoming book on medicines management in primary care (Class Professional, June 2026).</p>
         <p>With a publishing record spanning <em>BMJ Open</em>, the <em>Pharmaceutical Journal</em>, and <em>Chemist &amp; Druggist</em>, Danny combines academic rigour with the practical credibility of over a decade on the front line of primary care.</p>
 
         <div class="creds">
@@ -392,7 +431,7 @@
           <span class="cred-tag">Independent Prescriber</span>
           <span class="cred-tag">PGCert Strategic Leadership</span>
           <span class="cred-tag">NHS England Clinical Lead</span>
-          <span class="cred-tag">RPS Board Member</span>
+          <span class="cred-tag">RPS Board Member (2023–2026)</span>
           <span class="cred-tag">GPhC Panel Member</span>
           <span class="cred-tag">University of Brighton – Senior Lecturer</span>
           <span class="cred-tag">Deprescribing Specialist</span>
@@ -401,7 +440,7 @@
 
         <ul class="role-list">
           <li><strong>Clinical Lead, Primary Care School</strong> – NHS England, KSS (Oct 2024–present)</li>
-          <li><strong>Board Member, English Pharmacy Board</strong> – Royal Pharmaceutical Society (Jun 2023–present)</li>
+          <li><strong>Board Member, English Pharmacy Board</strong> – Royal Pharmaceutical Society (Jun 2023–May 2026)</li>
           <li><strong>Deputy Course Lead &amp; Senior Lecturer</strong> – University of Brighton, Independent Prescribing (Sep 2022–present)</li>
           <li><strong>Panel Member – Accreditation &amp; Recognition</strong> – General Pharmaceutical Council (Jun 2025–present)</li>
           <li><strong>Non-Executive Director</strong> – The Pharmacist Network (Jun 2025–present)</li>
@@ -587,6 +626,73 @@
   </div>
 </section>
 
+<!-- ── PUBLICATIONS ───────────────────────────────────────────── -->
+<section id="publications">
+  <div class="section-inner">
+    <div class="section-tag">Publications &amp; Research</div>
+    <h2 class="section-title" style="color:var(--white);">Peer-reviewed research, <span>books &amp; commentary</span></h2>
+    <p class="section-subtitle">Published academic work, clinical commentary, and thought leadership across primary care pharmacy, medicines optimisation, and workforce development.</p>
+
+    <div class="pub-grid">
+
+      <!-- Featured: Book -->
+      <div class="pub-card pub-card-featured">
+        <div class="pub-type">📖 Book — Pre-order now</div>
+        <h3><a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener">Medicines Management: A Quick Reference Guide for Allied Health Professionals in Primary Care</a></h3>
+        <div class="pub-meta">Class Professional Publishing &nbsp;·&nbsp; Co-authored with Matt Dixon &nbsp;·&nbsp; Releasing 15 June 2026</div>
+        <p>A practical, clinician-facing reference guide for allied health professionals working in primary care settings. Covering medicines optimisation, safe prescribing, high-risk drugs, and structured medication review, this book equips pharmacists, nurses, and AHPs with the tools they need for confident, evidence-based medicines management in general practice and PCNs.</p>
+        <a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener" class="pub-role">Pre-order on Class Professional →</a>
+      </div>
+
+      <!-- BMJ Open -->
+      <div class="pub-card">
+        <div class="pub-type">🔬 Peer-reviewed research</div>
+        <h3><a href="https://bmjopen.bmj.com/content/15/11/e104341" target="_blank" rel="noopener">A Modified Delphi Consensus to Reframe and Prioritise the Management of Chronic Insomnia in UK Primary Care</a></h3>
+        <div class="pub-meta">BMJ Open &nbsp;·&nbsp; Volume 15, Issue 11 &nbsp;·&nbsp; 2025</div>
+        <p>A national modified Delphi consensus study involving 201 UK healthcare professionals — GPs, pharmacists, and sleep specialists — generating 37 evidence-based recommendations to improve the diagnosis and management of chronic insomnia in primary care. The study highlights systemic under-recognition of insomnia and calls for it to be treated as a stand-alone chronic condition.</p>
+        <span class="pub-role">Steering group member &amp; co-author</span>
+      </div>
+
+      <!-- PJ: PCN pharmacist -->
+      <div class="pub-card">
+        <div class="pub-type">✍️ Opinion — The Pharmaceutical Journal</div>
+        <h3><a href="https://pharmaceutical-journal.com/article/opinion/what-a-primary-care-network-pharmacist-really-does" target="_blank" rel="noopener">What a Primary Care Network Pharmacist Really Does</a></h3>
+        <div class="pub-meta">The Pharmaceutical Journal</div>
+        <p>An inside account of the expanding and evolving role of clinical pharmacists within primary care networks — demystifying the day-to-day reality of PCN pharmacy practice and making the case for the profession's central role in delivering NHS primary care transformation.</p>
+        <span class="pub-role">Author</span>
+      </div>
+
+      <!-- PJ: SMRs -->
+      <div class="pub-card">
+        <div class="pub-type">📰 News &amp; Research — The Pharmaceutical Journal</div>
+        <h3><a href="https://pharmaceutical-journal.com/article/news/smrs-cut-prescribing-of-potentially-inappropriate-medicines-by-up-to-40" target="_blank" rel="noopener">SMRs Cut Prescribing of Potentially Inappropriate Medicines by Up to 40%</a></h3>
+        <div class="pub-meta">The Pharmaceutical Journal</div>
+        <p>Reporting on the significant clinical impact of structured medication reviews (SMRs) conducted by clinical pharmacists in primary care, demonstrating measurable reductions in potentially inappropriate prescribing and highlighting the value of pharmacist-led interventions in reducing medicines-related harm.</p>
+        <span class="pub-role">Contributor</span>
+      </div>
+
+      <!-- PJ: Safe structure -->
+      <div class="pub-card">
+        <div class="pub-type">✍️ Opinion — The Pharmaceutical Journal</div>
+        <h3><a href="https://pharmaceutical-journal.com/article/opinion/we-must-build-a-supportive-and-safe-structure-for-primary-care-pharmacy-teams" target="_blank" rel="noopener">We Must Build a Supportive and Safe Structure for Primary Care Pharmacy Teams</a></h3>
+        <div class="pub-meta">The Pharmaceutical Journal</div>
+        <p>Calling for robust governance, clinical supervision, and professional support structures as increasing numbers of pharmacists move into general practice. Sets out what safe, effective ARRS pharmacy workforce integration requires — from competency frameworks to leadership accountability.</p>
+        <span class="pub-role">Author</span>
+      </div>
+
+      <!-- PJ: COVID -->
+      <div class="pub-card">
+        <div class="pub-type">✍️ Opinion — The Pharmaceutical Journal</div>
+        <h3><a href="https://pharmaceutical-journal.com/article/opinion/how-fearful-medication-requests-have-wreaked-havoc-on-my-general-practice-during-the-covid-19-pandemic" target="_blank" rel="noopener">How Fearful Medication Requests Have Wreaked Havoc on My General Practice During the COVID-19 Pandemic</a></h3>
+        <div class="pub-meta">The Pharmaceutical Journal &nbsp;·&nbsp; June 2020</div>
+        <p>A frontline account of the medicines-related pressures facing primary care during the COVID-19 pandemic — exploring how media-driven patient anxieties around medication generated a wave of inappropriate requests and what pharmacists and GPs can do to manage demand safely and compassionately.</p>
+        <span class="pub-role">Author</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── CONTACT ────────────────────────────────────────────────── -->
 <section id="contact">
   <div class="section-inner">
@@ -679,6 +785,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#speaking">Speaking</a></li>
       <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <p class="footer-copy">
