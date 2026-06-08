@@ -39,9 +39,9 @@
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between; height: 72px;
+      display: flex; align-items: center; justify-content: space-between; height: 88px;
     }
-    .nav-logo img { height: 48px; display: block; }
+    .nav-logo img { height: 68px; display: block; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--mid); font-weight: 500; font-size: .95rem; transition: color .2s; }
     .nav-links a:hover { color: var(--teal); }
@@ -53,7 +53,7 @@
 
     /* ── HERO ─────────────────────────────────────────────── */
     #hero {
-      min-height: 100vh; padding-top: 72px;
+      min-height: 100vh; padding-top: 88px;
       background: linear-gradient(135deg, var(--dark) 0%, #2a4a56 100%);
       display: flex; align-items: center; overflow: hidden; position: relative;
     }
@@ -113,6 +113,7 @@
       grid-column: 1 / -1; display: flex; gap: 3rem; padding-top: 2rem;
       border-top: 1px solid rgba(255,255,255,.1);
     }
+    .hero-stats-logo img { height: 80px; display: block; filter: brightness(0) invert(1); opacity: .85; }
     .stat { color: var(--white); }
     .stat-number { font-size: 2rem; font-weight: 800; color: var(--teal); }
     .stat-label { font-size: .85rem; color: rgba(255,255,255,.6); margin-top: .15rem; }
@@ -262,8 +263,8 @@
     /* ── FOOTER ───────────────────────────────────────────── */
     footer { background: var(--dark); color: rgba(255,255,255,.5); padding: 3rem 5%; text-align: center; }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-logo { display: flex; justify-content: center; margin-bottom: 1.5rem; }
-    .footer-logo img { height: 44px; filter: brightness(0) invert(1); opacity: .7; }
+    .footer-logo { display: flex; justify-content: center; margin-bottom: 1.75rem; }
+    .footer-logo img { height: 90px; display: block; filter: brightness(0) invert(1); opacity: .9; }
     .footer-links { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-bottom: 1.5rem; flex-wrap: wrap; }
     .footer-links a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .9rem; transition: color .2s; }
     .footer-links a:hover { color: var(--teal); }
@@ -342,6 +343,9 @@
       </div>
     </div>
     <div class="hero-stats">
+      <div class="hero-stats-logo">
+        <img src="assets/logo.png" alt="PCCE – Primary Care Clinical Excellence" />
+      </div>
       <div class="stat">
         <div class="stat-number">150+</div>
         <div class="stat-label">National speaking engagements</div>
