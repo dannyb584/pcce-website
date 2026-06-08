@@ -68,6 +68,11 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
       position: relative; z-index: 1; width: 100%;
     }
+    .hero-logo-statement {
+      grid-column: 1 / -1; display: flex; justify-content: center; align-items: center;
+      padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 1rem;
+    }
+    .hero-logo-statement img { height: 160px; display: block; filter: drop-shadow(0 0 40px rgba(43,168,177,.35)); }
     .hero-badge {
       display: inline-flex; align-items: center; gap: .5rem;
       background: rgba(125,194,66,.15); border: 1px solid rgba(125,194,66,.3);
@@ -113,8 +118,8 @@
       grid-column: 1 / -1; display: flex; gap: 3rem; padding-top: 2rem;
       border-top: 1px solid rgba(255,255,255,.1);
     }
-    .hero-stats-logo { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: 16px; padding: .6rem .9rem; display: flex; align-items: center; }
-    .hero-stats-logo img { height: 72px; display: block; }
+    .hero-stats-logo { display: flex; align-items: center; }
+    .hero-stats-logo img { height: 80px; display: block; }
     .stat { color: var(--white); }
     .stat-number { font-size: 2rem; font-weight: 800; color: var(--teal); }
     .stat-label { font-size: .85rem; color: rgba(255,255,255,.6); margin-top: .15rem; }
@@ -300,8 +305,8 @@
     footer { background: var(--dark); color: rgba(255,255,255,.5); padding: 3rem 5%; text-align: center; }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
     .footer-logo { display: flex; justify-content: center; margin-bottom: 1.75rem; }
-    .footer-logo-wrap { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: .8rem 1.4rem; display: inline-flex; align-items: center; }
-    .footer-logo img { height: 90px; display: block; }
+    .footer-logo-wrap { display: inline-flex; align-items: center; }
+    .footer-logo img { height: 110px; display: block; filter: drop-shadow(0 0 20px rgba(43,168,177,.3)); }
     .footer-links { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-bottom: 1.5rem; flex-wrap: wrap; }
     .footer-links a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .9rem; transition: color .2s; }
     .footer-links a:hover { color: var(--teal); }
@@ -365,6 +370,9 @@
 <section id="hero">
   <div class="hero-pattern"></div>
   <div class="hero-inner">
+    <div class="hero-logo-statement">
+      <img src="assets/logo.png" alt="PCCE – Primary Care Clinical Excellence" />
+    </div>
     <div class="hero-text">
       <div class="hero-badge">Consultant Pharmacist · National Key Opinion Leader</div>
       <h1>Where <span>Clinical Excellence</span> Meets Primary Care</h1>
