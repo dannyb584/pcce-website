@@ -274,7 +274,18 @@
 
     /* ── TESTIMONIALS ─────────────────────────────────────── */
     #testimonials { background: var(--bg); }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .testimonials-carousel { margin: 3rem -5%; overflow: hidden; }
+    .testimonials-track {
+      display: flex; gap: 1.5rem;
+      animation: testimonials-scroll 50s linear infinite;
+      width: max-content; padding: 0.5rem 0;
+    }
+    .testimonials-track:hover { animation-play-state: paused; }
+    @keyframes testimonials-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testimonials-track .testimonial-card { flex-shrink: 0; width: 420px; }
     .testimonial-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
     .stars { color: var(--green); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
     .testimonial-card blockquote { font-size: .93rem; color: var(--mid); line-height: 1.7; font-style: italic; margin-bottom: 1.25rem; }
@@ -510,7 +521,7 @@
         animation-duration: .001ms !important; animation-iteration-count: 1 !important;
         transition-duration: .001ms !important; scroll-behavior: auto !important;
       }
-      .gallery-track { animation: none !important; }
+      .gallery-track, .testimonials-track { animation: none !important; }
     }
 
     /* ── RESPONSIVE ───────────────────────────────────────── */
@@ -534,7 +545,7 @@
       .about-img-wrap { display: none; }
       .services-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
       .speaking-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonials-track .testimonial-card { width: 300px; }
       .pub-grid { grid-template-columns: 1fr; }
       .pub-card-featured { grid-column: 1; }
       .pub-card-featured > div { flex-direction: column !important; }
@@ -891,37 +902,96 @@
     <div class="section-tag">Testimonials</div>
     <h2 class="section-title">What people <span>say</span></h2>
     <p class="section-subtitle">Feedback from clinicians, event organisers, and organisations across primary care.</p>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Danny is a consummate professional. He's a popular speaker at our events. He speaks with clarity and confidence on a whole range of issues relevant to NHS and wider healthcare professionals. He's collaborative and extremely supportive of what our events have been trying to achieve. He's also delivered brilliant in-person training to our own teams to get them up to speed with the pharmacy landscape. I wouldn't hesitate to recommend working with Danny."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">LR</div>
-          <div>
-            <div class="author-name">Liam R.</div>
-            <div class="author-role">Healthcare Portfolio Director</div>
+    <div class="testimonials-carousel">
+      <div class="testimonials-track">
+        <!-- Set 1 -->
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Danny is a consummate professional. He's a popular speaker at our events. He speaks with clarity and confidence on a whole range of issues relevant to NHS and wider healthcare professionals. He's collaborative and extremely supportive of what our events have been trying to achieve. He's also delivered brilliant in-person training to our own teams to get them up to speed with the pharmacy landscape. I wouldn't hesitate to recommend working with Danny."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">LR</div>
+            <div>
+              <div class="author-name">Liam R.</div>
+              <div class="author-role">Healthcare Portfolio Director</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Danny personifies all that is positive about the new generation of pharmacists. His strategic thinking, presentational skills and problem solving are all grounded in advanced clinical practice but with peripheral vision that goes much further than medicines. He has an extremely valuable combination of applied intelligence and practical experience that is rare but powerful. This allows him to see unusual solutions and to convey them effectively."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">DT</div>
-          <div>
-            <div class="author-name">David Thorne</div>
-            <div class="author-role">NHS Transformation Director and Market Access Consultant</div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Danny personifies all that is positive about the new generation of pharmacists. His strategic thinking, presentational skills and problem solving are all grounded in advanced clinical practice but with peripheral vision that goes much further than medicines. He has an extremely valuable combination of applied intelligence and practical experience that is rare but powerful. This allows him to see unusual solutions and to convey them effectively."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">DT</div>
+            <div>
+              <div class="author-name">David Thorne</div>
+              <div class="author-role">NHS Transformation Director and Market Access Consultant</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Danny is an absolute star! He's friendly, knowledgeable, and effective at whatever he gets involved in. He always seems to make training and education fun and inspiring..."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">MM</div>
-          <div>
-            <div class="author-name">Mike Maguire</div>
-            <div class="author-role">Head of Education and Clinical Services</div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Danny is an absolute star! He's friendly, knowledgeable, and effective at whatever he gets involved in. He always seems to make training and education fun and inspiring..."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MM</div>
+            <div>
+              <div class="author-name">Mike Maguire</div>
+              <div class="author-role">Head of Education and Clinical Services</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Danny brings an impressive combination of authenticity in his clinical practice, with superb approachability in his communication skills. His ability to take the complex in policy to making things tangible in the doing of it in real-world practice simpler, is first-rate. Whether sharing his care experiences on stage as a speaker, or leading/coaching in educational settings, he is exemplary and impactful in his work delivery."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">ML</div>
+            <div>
+              <div class="author-name">Michael Lennox</div>
+              <div class="author-role">Community Pharmacy Policy and Practice Lead</div>
+            </div>
+          </div>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Danny is a consummate professional. He's a popular speaker at our events. He speaks with clarity and confidence on a whole range of issues relevant to NHS and wider healthcare professionals. He's collaborative and extremely supportive of what our events have been trying to achieve. He's also delivered brilliant in-person training to our own teams to get them up to speed with the pharmacy landscape. I wouldn't hesitate to recommend working with Danny."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">LR</div>
+            <div>
+              <div class="author-name">Liam R.</div>
+              <div class="author-role">Healthcare Portfolio Director</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Danny personifies all that is positive about the new generation of pharmacists. His strategic thinking, presentational skills and problem solving are all grounded in advanced clinical practice but with peripheral vision that goes much further than medicines. He has an extremely valuable combination of applied intelligence and practical experience that is rare but powerful. This allows him to see unusual solutions and to convey them effectively."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">DT</div>
+            <div>
+              <div class="author-name">David Thorne</div>
+              <div class="author-role">NHS Transformation Director and Market Access Consultant</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Danny is an absolute star! He's friendly, knowledgeable, and effective at whatever he gets involved in. He always seems to make training and education fun and inspiring..."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MM</div>
+            <div>
+              <div class="author-name">Mike Maguire</div>
+              <div class="author-role">Head of Education and Clinical Services</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Danny brings an impressive combination of authenticity in his clinical practice, with superb approachability in his communication skills. His ability to take the complex in policy to making things tangible in the doing of it in real-world practice simpler, is first-rate. Whether sharing his care experiences on stage as a speaker, or leading/coaching in educational settings, he is exemplary and impactful in his work delivery."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">ML</div>
+            <div>
+              <div class="author-name">Michael Lennox</div>
+              <div class="author-role">Community Pharmacy Policy and Practice Lead</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1168,7 +1238,7 @@
   document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
   // ── Stagger animate children of grids ────────────────────
-  document.querySelectorAll('.services-grid, .speaking-grid, .pub-grid, .testimonials-grid').forEach(grid => {
+  document.querySelectorAll('.services-grid, .speaking-grid, .pub-grid').forEach(grid => {
     grid.querySelectorAll(':scope > *').forEach((child, i) => {
       child.classList.add('animate');
       child.style.transitionDelay = `${i * 0.1}s`;
