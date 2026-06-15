@@ -415,6 +415,104 @@
     .footer-links a:hover { color: var(--teal); }
     .footer-copy { font-size: .8rem; }
 
+    /* ── CLINICAL EDUCATION / VIDEOS ──────────────────────── */
+    #education { background: var(--white); }
+    .edu-channel-intro {
+      display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+      margin-top: 2.5rem; padding: 1.5rem 1.75rem;
+      background: linear-gradient(135deg, var(--teal-light), var(--green-light));
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    .edu-channel-icon {
+      width: 54px; height: 54px; border-radius: 14px; background: #FF0000; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(255,0,0,.25);
+    }
+    .edu-channel-icon svg { width: 30px; height: 30px; fill: var(--white); }
+    .edu-channel-intro p { color: var(--mid); font-size: .95rem; line-height: 1.7; flex: 1; min-width: 240px; margin: 0; }
+    .edu-channel-intro .edu-channel-name { font-weight: 700; color: var(--dark); }
+    .edu-sub { margin-top: 3.5rem; }
+    .edu-sub-head { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; margin-bottom: .4rem; }
+    .edu-sub-head h3 { font-size: 1.45rem; font-weight: 800; color: var(--dark); }
+    .edu-sub-pill {
+      font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: .25rem .7rem; border-radius: 50px; background: var(--teal-light); color: var(--teal-dark);
+    }
+    .edu-sub-pill.soon { background: var(--green-light); color: var(--green-dark); }
+    .edu-sub-blurb { color: var(--muted); max-width: 720px; line-height: 1.7; margin-bottom: 1.75rem; font-size: .96rem; }
+    .videos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .short-card {
+      position: relative; aspect-ratio: 9 / 16; border-radius: var(--radius);
+      overflow: hidden; background: var(--dark); cursor: pointer;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .short-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .short-card .short-thumb { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+    .short-card:hover .short-thumb { transform: scale(1.05); }
+    .short-overlay {
+      position: absolute; inset: 0; display: flex; align-items: flex-end;
+      background: linear-gradient(transparent 45%, rgba(0,0,0,.78)); padding: 1rem;
+    }
+    .short-play {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 58px; height: 58px; border-radius: 50%; background: rgba(255,255,255,.92);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.3); transition: transform .3s ease, background .3s ease;
+    }
+    .short-card:hover .short-play { transform: translate(-50%,-50%) scale(1.12); background: var(--teal); }
+    .short-play svg { width: 22px; height: 22px; margin-left: 3px; fill: var(--teal); transition: fill .3s ease; }
+    .short-card:hover .short-play svg { fill: var(--white); }
+    .short-title { position: relative; color: var(--white); font-size: .9rem; font-weight: 600; line-height: 1.35; z-index: 1; }
+    .short-card iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .videos-empty {
+      margin-top: 3rem; padding: 3.5rem 2rem; text-align: center; color: var(--muted);
+      border: 2px dashed var(--border); border-radius: var(--radius); background: var(--bg);
+    }
+    .videos-empty strong { color: var(--dark); display: block; font-size: 1.1rem; margin-bottom: .5rem; }
+    .videos-cta { text-align: center; margin-top: 3rem; }
+    .videos-channel-btn {
+      display: inline-flex; align-items: center; gap: .6rem; background: #FF0000; color: var(--white);
+      text-decoration: none; font-weight: 600; padding: .85rem 1.75rem; border-radius: 50px;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease; box-shadow: 0 4px 16px rgba(255,0,0,.25);
+    }
+    .videos-channel-btn:hover { background: #cc0000; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,0,0,.35); }
+    .videos-channel-btn svg { width: 22px; height: 22px; fill: var(--white); }
+
+    /* ── EXTRA POLISHED MOTION ────────────────────────────── */
+    nav { transition: box-shadow .3s ease; }
+    nav.nav-scrolled { box-shadow: 0 4px 20px rgba(26,46,56,.08); }
+    .section-title::after {
+      content: ''; display: block; width: 60px; height: 3px; margin-top: 1rem;
+      background: linear-gradient(90deg, var(--teal), var(--green)); border-radius: 2px;
+      transform: scaleX(0); transform-origin: left; transition: transform .8s ease .15s;
+    }
+    .section-title.visible::after { transform: scaleX(1); }
+    .btn-primary, .btn-green { position: relative; overflow: hidden; }
+    .btn-primary::after, .btn-green::after {
+      content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+      transform: skewX(-20deg); transition: left .6s ease; pointer-events: none;
+    }
+    .btn-primary:hover::after, .btn-green:hover::after { left: 130%; }
+    @media (prefers-reduced-motion: no-preference) {
+      #hero {
+        background: linear-gradient(135deg, var(--dark) 0%, #2a4a56 50%, #21424d 100%);
+        background-size: 200% 200%; animation: heroGradient 20s ease infinite;
+      }
+      @keyframes heroGradient {
+        0%   { background-position: 0% 50%; }
+        50%  { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important; scroll-behavior: auto !important;
+      }
+      .gallery-track { animation: none !important; }
+    }
+
     /* ── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 900px) {
       /* Nav */
@@ -444,6 +542,8 @@
       .form-row { grid-template-columns: 1fr; }
       /* Gallery */
       .gallery-item { width: 280px; height: 180px; }
+      /* Videos */
+      .videos-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     }
     @media (max-width: 600px) {
       section { padding: 3.5rem 4%; }
@@ -473,6 +573,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#contact" class="nav-cta">Get in touch</a></li>
@@ -486,6 +587,7 @@
       <li><a href="#about" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">About</a></li>
       <li><a href="#services" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Services</a></li>
       <li><a href="#speaking" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Speaking</a></li>
+      <li><a href="#education" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Education</a></li>
       <li><a href="#testimonials" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Reviews</a></li>
       <li><a href="#publications" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Publications</a></li>
       <li><a href="#contact" onclick="toggleMenu()" style="color:var(--teal);font-weight:600;text-decoration:none;">Get in touch →</a></li>
@@ -757,6 +859,32 @@
   </div>
 </section>
 
+<!-- ── CLINICAL EDUCATION / VIDEOS ─────────────────────────────── -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-tag">Clinical Education</div>
+    <h2 class="section-title">Learn in <span>30 seconds</span></h2>
+    <p class="section-subtitle">Short, visually-driven clinical explainers — making pharmacology and primary care concepts quick to grasp and easy to remember.</p>
+
+    <div class="edu-channel-intro">
+      <div class="edu-channel-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+      </div>
+      <p><span class="edu-channel-name">Science Made Visual</span> is Danny's YouTube channel — bite-sized, animation-led explainers that turn complex medicines and clinical topics into clear, memorable visuals for clinicians, students, and curious patients alike. Below are the educational series hosted here, growing as new videos are released.</p>
+    </div>
+
+    <!-- Subsections render here -->
+    <div id="eduSections"></div>
+
+    <div class="videos-cta">
+      <a id="channelBtn" class="videos-channel-btn" href="https://www.youtube.com/@ScienceMadeVisual" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+        Subscribe on YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── TESTIMONIALS ───────────────────────────────────────────── -->
 <section id="testimonials">
   <div class="section-inner">
@@ -971,6 +1099,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1100,6 +1229,71 @@
     }
     btn.textContent = 'Send message'; btn.disabled = false;
   });
+
+  // ── Section-title accent reveal + nav shadow on scroll ───
+  document.querySelectorAll('.section-title').forEach(el => observer.observe(el));
+  const navBar = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    navBar.classList.toggle('nav-scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // ── Clinical Education videos (curated, self-rendering) ───
+  // TO ADD A VIDEO: grab its ID — the part after /shorts/ or watch?v=
+  // (e.g. youtube.com/shorts/_06TcN-B6sw  →  id: '_06TcN-B6sw')
+  // and drop a { id, title } object into the right series below.
+  // To add a whole new series, copy one { } block in EDU_SERIES.
+  const EDU_SERIES = [
+    {
+      title: 'Medication Education',
+      pill: 'Series',
+      blurb: 'Thirty-second visual explainers on how key medicines work — ideal for quick revision, teaching, or sharing with patients. This series grows as new videos are released.',
+      shorts: [
+        { id: '_06TcN-B6sw', title: 'How Calcium Channel Blockers Work (in 30 seconds)' }
+      ]
+    },
+    {
+      title: 'Pharmacy Leadership',
+      pill: 'Coming soon',
+      pillClass: 'soon',
+      blurb: 'A forthcoming series on leadership, workforce development, and strategy across primary care pharmacy. Shorts will appear here as the playlist launches.',
+      shorts: []
+    }
+  ];
+
+  (function renderEducation() {
+    const wrap = document.getElementById('eduSections');
+    if (!wrap) return;
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+    wrap.innerHTML = EDU_SERIES.map(series => {
+      const cards = series.shorts.length
+        ? '<div class="videos-grid">' + series.shorts.map(v => `
+            <div class="short-card" data-id="${esc(v.id)}" role="button" tabindex="0" aria-label="Play: ${esc(v.title)}">
+              <img class="short-thumb" loading="lazy" src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="${esc(v.title)}" />
+              <div class="short-overlay">
+                <div class="short-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="short-title">${esc(v.title)}</div>
+              </div>
+            </div>`).join('') + '</div>'
+        : '<div class="videos-empty"><strong>Coming soon</strong>New videos in this series will appear here automatically.</div>';
+      return `<div class="edu-sub">
+        <div class="edu-sub-head">
+          <h3>${esc(series.title)}</h3>
+          <span class="edu-sub-pill ${series.pillClass || ''}">${esc(series.pill)}</span>
+        </div>
+        <p class="edu-sub-blurb">${esc(series.blurb)}</p>
+        ${cards}
+      </div>`;
+    }).join('');
+
+    wrap.querySelectorAll('.short-card').forEach(card => {
+      const play = () => {
+        const id = card.dataset.id;
+        card.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+      };
+      card.addEventListener('click', play);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } });
+    });
+  })();
 
   // ── LinkedIn bubble: show when scrolling into publications / contact / footer ──
   (function () {
