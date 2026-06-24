@@ -16,3 +16,8 @@ When Danny says "new video" or "add latest video":
 ## Videos currently on site
 - UFZdjqLfsf4 — "Pharmacy Leadership – A new series!"
 - _Fe_4-XbOUo — "Clinical leadership: using the expertise around you"
+
+
+## Medication Education series (added 2026-06-24)
+- _06TcN-B6sw — How Calcium Channel Blockers Work
+- EvnCz4aHabw — How Statins Actually Work 💊
