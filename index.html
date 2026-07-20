@@ -426,6 +426,21 @@
     .footer-links a:hover { color: var(--teal); }
     .footer-copy { font-size: .8rem; }
 
+    /* ── CLINICAL EDUCATION HUB ───────────────────────────────── */
+    #hub { background: linear-gradient(160deg, var(--bg) 0%, rgba(43,168,177,.06) 100%); }
+    .hub-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .hub-why-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: all .3s; position: relative; overflow: hidden; }
+    .hub-why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--green)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .hub-why-card:hover { box-shadow: var(--shadow-lg); border-color: transparent; transform: translateY(-4px); }
+    .hub-why-card:hover::before { transform: scaleX(1); }
+    .hub-why-icon { width: 52px; height: 52px; background: var(--teal-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+    .hub-why-icon svg { width: 26px; height: 26px; }
+    .hub-why-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: .6rem; }
+    .hub-why-card p { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .hub-quote { background: var(--dark); border-radius: var(--radius); padding: 2.5rem 3rem; margin-top: 3rem; text-align: center; }
+    .hub-quote blockquote { font-size: clamp(1.1rem, 2vw, 1.35rem); font-style: italic; color: rgba(255,255,255,.9); line-height: 1.65; margin-bottom: 1rem; font-weight: 300; }
+    .hub-quote cite { font-size: .85rem; color: var(--teal); font-style: normal; font-weight: 600; }
+    .hub-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
     /* ── CLINICAL EDUCATION / VIDEOS ──────────────────────── */
     #education { background: var(--white); }
     .edu-channel-intro {
@@ -584,7 +599,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#speaking">Speaking</a></li>
-      <li><a href="#education">Education</a></li>
+      <li><a href="#hub">Education</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#contact" class="nav-cta">Get in touch</a></li>
@@ -598,7 +613,7 @@
       <li><a href="#about" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">About</a></li>
       <li><a href="#services" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Services</a></li>
       <li><a href="#speaking" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Speaking</a></li>
-      <li><a href="#education" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Education</a></li>
+      <li><a href="#hub" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Education</a></li>
       <li><a href="#testimonials" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Reviews</a></li>
       <li><a href="#publications" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Publications</a></li>
       <li><a href="#contact" onclick="toggleMenu()" style="color:var(--teal);font-weight:600;text-decoration:none;">Get in touch →</a></li>
@@ -902,6 +917,50 @@
 </section>
 
 <!-- ── CLINICAL EDUCATION / VIDEOS ─────────────────────────────── -->
+<!-- ── CLINICAL EDUCATION HUB ───────────────────────────────────── -->
+<section id="hub">
+  <div class="section-inner">
+    <div class="animate">
+      <div class="section-tag">Clinical Education Hub</div>
+      <h2 class="section-title">Clinical education that <span>actually works</span></h2>
+      <p class="section-subtitle">Traditional clinical education is dense, dry, and forgotten by Tuesday. PCCE takes a different approach &#8212; evidence-based content built around how busy clinicians actually learn: visual, concise, and immediately applicable.</p>
+    </div>
+    <div class="hub-why animate animate-delay-1">
+      <div class="hub-why-card">
+        <div class="hub-why-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="var(--teal)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.069A1 1 0 0121 8.847v6.306a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <h3>Visual &amp; under 3 minutes</h3>
+        <p>Animation-led explainers on the <strong>@ScienceMadeVisual</strong> YouTube channel &#8212; complex pharmacology and primary care concepts broken into visuals that actually stick.</p>
+        <a href="#education" class="learn-more">Watch the Shorts &#8594;</a>
+      </div>
+      <div class="hub-why-card">
+        <div class="hub-why-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="var(--teal)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        </div>
+        <h3>The reference clinicians reach for</h3>
+        <p>Co-author of <em>Medicines Management: A Quick Reference Guide for AHPs in Primary Care</em> (Class Professional, 2026) &#8212; evidence-based, practical, and written for the clinic, not the lecture hall.</p>
+        <a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener" class="learn-more">Order the book &#8594;</a>
+      </div>
+      <div class="hub-why-card">
+        <div class="hub-why-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="var(--teal)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+        </div>
+        <h3>Live, tailored, and evidence-led</h3>
+        <p>150+ national speaking engagements. Bespoke clinical education workshops for GP practices, PCNs, and NHS organisations &#8212; medicines optimisation to prescribing safety.</p>
+        <a href="#speaking" class="learn-more">See speaking topics &#8594;</a>
+      </div>
+    </div>
+    <div class="hub-quote animate animate-delay-2">
+      <blockquote>&#8220;Clinical education shouldn&#8217;t feel like reading a policy document. It should feel like something clicked.&#8221;</blockquote>
+      <cite>&#8212; Danny Bartlett &nbsp;&middot;&nbsp; Pharmacist &nbsp;&middot;&nbsp; Educator &nbsp;&middot;&nbsp; Clinical Lead, NHS England</cite>
+    </div>
+    <div class="hub-cta animate animate-delay-3">
+      <a href="#education" class="btn-primary">Watch the education Shorts &#8595;</a>
+      <a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener" class="btn-green">Order the book</a>
+    </div>
+  </div>
+</section>
 <section id="education">
   <div class="section-inner">
     <div class="section-tag">Clinical Education</div>
@@ -1245,7 +1304,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#speaking">Speaking</a></li>
-      <li><a href="#education">Education</a></li>
+      <li><a href="#hub">Education</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#contact">Contact</a></li>
