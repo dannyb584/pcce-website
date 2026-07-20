@@ -441,6 +441,9 @@
     .hub-quote blockquote { font-size: clamp(1.1rem, 2vw, 1.35rem); font-style: italic; color: rgba(255,255,255,.9); line-height: 1.65; margin-bottom: 1rem; font-weight: 300; }
     .hub-quote cite { font-size: .85rem; color: var(--teal); font-style: normal; font-weight: 600; }
     .hub-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
+    .hub-pragmatic { margin-top: 2.5rem; padding: 1.75rem 2rem 1.75rem 1.75rem; border-left: 4px solid var(--teal); background: var(--white); border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow); }
+    .hub-pragmatic p { font-size: 1rem; color: var(--dark); line-height: 1.75; font-style: italic; margin-bottom: .65rem; }
+    .hub-pragmatic .hub-pragmatic-tagline { font-size: .9rem; color: var(--teal-dark); font-weight: 700; font-style: normal; display: block; }
     /* ── CLINICAL EDUCATION / VIDEOS ──────────────────────── */
     #education { background: var(--white); }
     .edu-channel-intro {
@@ -570,6 +573,7 @@
       .gallery-item { width: 280px; height: 180px; }
       /* Videos */
       .videos-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .hub-why { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       section { padding: 3.5rem 4%; }
@@ -584,6 +588,9 @@
       .gallery-item { width: 240px; height: 160px; }
       .book-btn { font-size: .88rem; padding: .8rem 1rem; }
       .talk-card, .service-card, .pub-card, .testimonial-card { padding: 1.4rem; }
+      .hub-why { grid-template-columns: 1fr; }
+      .hub-pragmatic { border-left: none; border-top: 4px solid var(--teal); border-radius: var(--radius); padding: 1.25rem; }
+      .hub-quote { padding: 1.75rem 1.25rem; }
     }
   </style>
 </head>
@@ -925,7 +932,11 @@
       <h2 class="section-title">Clinical education that <span>actually works</span></h2>
       <p class="section-subtitle">Traditional clinical education is dense, dry, and forgotten by Tuesday. PCCE takes a different approach &#8212; evidence-based content built around how busy clinicians actually learn: visual, concise, and immediately applicable.</p>
     </div>
-    <div class="hub-why animate animate-delay-1">
+    <div class="hub-pragmatic animate animate-delay-1">
+      <p>&#8220;You can have the most clinically expert speaker &#8212; but unless it&#8217;s practical and paired with how things actually work operationally, and how teams can do things differently, it won&#8217;t land.&#8221;</p>
+      <span class="hub-pragmatic-tagline">PCCE delivers the most practical and pragmatic approach to clinical education &#8212; pairing clinical expertise with operational reality and a clear path to behaviour change.</span>
+    </div>
+    <div class="hub-why animate animate-delay-2">
       <div class="hub-why-card">
         <div class="hub-why-icon">
           <svg fill="none" viewBox="0 0 24 24" stroke="var(--teal)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.069A1 1 0 0121 8.847v6.306a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
@@ -951,11 +962,11 @@
         <a href="#speaking" class="learn-more">See speaking topics &#8594;</a>
       </div>
     </div>
-    <div class="hub-quote animate animate-delay-2">
+    <div class="hub-quote animate animate-delay-3">
       <blockquote>&#8220;Clinical education shouldn&#8217;t feel like reading a policy document. It should feel like something clicked.&#8221;</blockquote>
       <cite>&#8212; Danny Bartlett &nbsp;&middot;&nbsp; Pharmacist &nbsp;&middot;&nbsp; Educator &nbsp;&middot;&nbsp; Clinical Lead, NHS England</cite>
     </div>
-    <div class="hub-cta animate animate-delay-3">
+    <div class="hub-cta animate animate-delay-4">
       <a href="#education" class="btn-primary">Watch the education Shorts &#8595;</a>
       <a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener" class="btn-green">Order the book</a>
     </div>
