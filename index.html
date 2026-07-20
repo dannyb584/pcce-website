@@ -440,6 +440,12 @@
     .hub-quote { background: var(--dark); border-radius: var(--radius); padding: 2.5rem 3rem; margin-top: 3rem; text-align: center; }
     .hub-quote blockquote { font-size: clamp(1.1rem, 2vw, 1.35rem); font-style: italic; color: rgba(255,255,255,.9); line-height: 1.65; margin-bottom: 1rem; font-weight: 300; }
     .hub-quote cite { font-size: .85rem; color: var(--teal); font-style: normal; font-weight: 600; }
+    .hub-collab { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; background: var(--green-light); border: 1px solid rgba(125,194,66,.25); border-radius: var(--radius); padding: 2.25rem 2.5rem; }
+    .hub-collab-head h3 { font-size: 1.2rem; font-weight: 800; color: var(--dark); margin-bottom: .75rem; }
+    .hub-collab-head p { font-size: .93rem; color: var(--mid); line-height: 1.75; }
+    .hub-collab-points { display: flex; flex-direction: column; gap: .65rem; }
+    .hub-collab-point { display: flex; gap: .75rem; align-items: flex-start; font-size: .9rem; color: var(--mid); line-height: 1.6; }
+    .hub-collab-point::before { content: "\25B8"; color: var(--green-dark); flex-shrink: 0; margin-top: .1rem; }
     .hub-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
     .hub-pragmatic-btn { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.25rem; background: linear-gradient(135deg, var(--teal), var(--green)); color: var(--white); text-decoration: none; font-weight: 600; font-size: .92rem; padding: .75rem 1.5rem; border-radius: 50px; transition: all .2s; box-shadow: 0 4px 14px rgba(43,168,177,.25); }
     .hub-pragmatic-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(43,168,177,.4); }
@@ -576,6 +582,7 @@
       /* Videos */
       .videos-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       .hub-why { grid-template-columns: 1fr; }
+      .hub-collab { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; }
     }
     @media (max-width: 600px) {
       section { padding: 3.5rem 4%; }
@@ -789,7 +796,7 @@
           <svg fill="none" viewBox="0 0 24 24" stroke="var(--teal)" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/></svg>
         </div>
         <h3>Mentoring &amp; Professional Coaching</h3>
-        <p>One-to-one and group mentoring for pharmacists, prescribers and allied health professionals. A Sussex Training Hub trained coach and mentor for healthcare professionals and Senior Fellow of the Higher Education Academy, Danny supports new-to-practice clinicians, aspiring clinical leaders and experienced professionals to build confidence, capability and career clarity across all stages of development.</p>
+        <p>One-to-one and group mentoring and professional coaching for all primary care clinicians. A Sussex Training Hub trained coach and mentor, and Senior Fellow of the Higher Education Academy, Danny supports new-to-practice clinicians, aspiring clinical leaders and experienced professionals across the full primary care workforce to build confidence, capability and career clarity.</p>
         <a href="#contact" class="learn-more">Enquire →</a>
       </div>
 
@@ -968,7 +975,19 @@
         <a href="#speaking" class="learn-more">See speaking topics &#8594;</a>
       </div>
     </div>
-    <div class="hub-quote animate animate-delay-3">
+    <div class="hub-collab animate animate-delay-3">
+      <div class="hub-collab-head">
+        <h3>Collaborative working &amp; project management</h3>
+        <p>PCCE doesn&#8217;t just deliver sessions and move on. Danny works alongside organisations on joint initiatives &#8212; bringing clinical expertise and project management capability from brief to delivery. If you have something to build, not just something to present, that&#8217;s where PCCE operates.</p>
+      </div>
+      <div class="hub-collab-points">
+        <div class="hub-collab-point">Co-producing educational resources built around your organisation&#8217;s context and goals</div>
+        <div class="hub-collab-point">Managing projects end-to-end &#8212; from scope and brief through to final output</div>
+        <div class="hub-collab-point">Joint initiatives with NHS organisations, PCNs, training hubs, and industry partners</div>
+        <div class="hub-collab-point">Clinical lead and subject matter expert on co-branded educational programmes</div>
+      </div>
+    </div>
+    <div class="hub-quote animate animate-delay-4">
       <blockquote>&#8220;The goal isn&#8217;t a good session. It&#8217;s the moment something clicks &#8212; and clinicians walk away able to adapt and improve their practice.&#8221;</blockquote>
       <cite>&#8212; Danny Bartlett &nbsp;&middot;&nbsp; Pharmacist &nbsp;&middot;&nbsp; Educator &nbsp;&middot;&nbsp; Clinical Lead, NHS England</cite>
     </div>
