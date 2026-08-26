@@ -461,10 +461,16 @@
       border: 1px solid var(--border); border-radius: var(--radius);
     }
     .edu-channel-icon {
-      width: 54px; height: 54px; border-radius: 14px; background: #FF0000; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(255,0,0,.25);
+      position: relative; width: 58px; height: 58px; border-radius: 50%; background: var(--white);
+      flex-shrink: 0; box-shadow: 0 4px 14px rgba(0,0,0,.18);
     }
-    .edu-channel-icon svg { width: 30px; height: 30px; fill: var(--white); }
+    .edu-channel-icon img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+    .edu-channel-yt {
+      position: absolute; right: -3px; bottom: -3px; width: 26px; height: 26px; border-radius: 8px;
+      background: #FF0000; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.28); border: 2px solid var(--white);
+    }
+    .edu-channel-yt svg { width: 14px; height: 14px; fill: var(--white); }
     .edu-channel-intro p { color: var(--mid); font-size: .95rem; line-height: 1.7; flex: 1; min-width: 240px; margin: 0; }
     .edu-channel-intro .edu-channel-name { font-weight: 700; color: var(--dark); }
     .edu-sub { margin-top: 3.5rem; }
@@ -1018,7 +1024,8 @@
 
     <div class="edu-channel-intro">
       <div class="edu-channel-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+        <img src="assets/smv-logo.png" alt="Science Made Visual" />
+        <span class="edu-channel-yt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg></span>
       </div>
       <p><span class="edu-channel-name">Science Made Visual</span> is Danny's YouTube channel — bite-sized, animation-led explainers that turn complex medicines and clinical topics into clear, memorable visuals for clinicians, students, and curious patients alike. Below are the educational series hosted here, growing as new videos are released.</p>
     </div>
