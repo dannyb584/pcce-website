@@ -644,6 +644,86 @@
         100% { transform: translate(calc(var(--dx) * -.6), var(--dy)) rotate(calc(var(--r) - 15deg)); }
       }
     }
+    /* ── Light blue sections instead of white (3 Nov 2026) ── */
+    :root { --sky: #D4ECF3; --sky-2: #E6F4F8; }
+    body { background: var(--sky-2); }
+    #services, #education, #testimonials { background: var(--sky); }
+    #hub, #about, #contact { background: var(--sky-2); }
+    #hub { background: linear-gradient(160deg, var(--sky-2) 0%, #D0E9F0 100%); }
+
+    /* Smaller photos */
+    .hero-photo { width: 320px; }
+    @media (min-width: 901px) { .about-grid { grid-template-columns: minmax(0, 320px) 1fr; gap: 4rem; } }
+
+    /* Teams badge on the booking button */
+    .teams-badge { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #fff; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,.12); }
+    .teams-badge svg { width: 22px; height: 22px; }
+    .hub-pragmatic-btn { padding: .55rem 1.4rem .55rem .6rem; }
+    .hub-pragmatic-btn small { display: block; font-weight: 500; font-size: .78rem; opacity: .9; }
+
+    /* Hub cards: previews instead of plain links */
+    .hub-why-card { display: flex; flex-direction: column; }
+    .hub-preview { margin-top: auto; display: block; text-decoration: none; color: var(--dark); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: var(--sky-2); transition: transform .25s, box-shadow .25s; }
+    .hub-preview:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -14px rgba(26,46,56,.45); }
+    .hub-preview-foot { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .7rem .9rem; font-weight: 700; font-size: .9rem; }
+    .hub-preview-foot .arrow { transition: transform .2s; }
+    .hub-preview:hover .arrow { transform: translateX(4px); }
+    .hub-preview-foot img { width: 26px; height: 26px; border-radius: 50%; }
+    .hub-preview-foot span:first-child { display: inline-flex; align-items: center; gap: .5rem; }
+    .yt-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; background: #1a2e38; }
+    .yt-strip div { position: relative; aspect-ratio: 9 / 13; border-radius: 6px; overflow: hidden; }
+    .yt-strip img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+    .hub-preview:hover .yt-strip img { transform: scale(1.06); }
+    .yt-strip div::after { content: ''; position: absolute; inset: 50% auto auto 50%; width: 26px; height: 18px; margin: -9px 0 0 -13px; border-radius: 5px; background: #E00000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l8 5-8 5z' fill='white'/%3E%3C/svg%3E") center / 14px no-repeat; }
+    .book-peek { display: flex; align-items: center; gap: 1rem; padding: .9rem; background: linear-gradient(135deg, #1a2e38, #2a4a56); }
+    .book-peek img { width: 84px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,.4); transform: rotate(-6deg); transition: transform .35s; }
+    .hub-preview:hover .book-peek img { transform: rotate(0) scale(1.05); }
+    .book-peek p { color: #E6F4F8; font-size: .82rem; line-height: 1.5; margin: 0; }
+    .hub-link { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; color: var(--dark); font-weight: 700; font-size: .9rem; padding: .6rem 1.1rem; border-radius: 50px; border: 1.5px solid var(--teal); transition: background .2s, color .2s, gap .2s; }
+    .hub-link:hover { background: var(--teal); color: #fff; gap: .8rem; }
+
+    /* Topic picture buttons above each education series */
+    .topic-tiles { display: flex; gap: .8rem; overflow-x: auto; padding: .4rem .2rem 1rem; margin: 0 0 1.25rem; scroll-snap-type: x proximity; }
+    .topic-tile { flex: 0 0 132px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: .7rem .6rem .8rem;
+      background: #fff; border: 1px solid var(--border); border-radius: 16px; cursor: pointer; font: inherit; font-size: .82rem; font-weight: 700; color: var(--dark); text-align: center; line-height: 1.2;
+      transition: transform .25s, box-shadow .25s, border-color .25s; }
+    .topic-tile img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; background: #0B4A54; box-shadow: 0 0 0 3px color-mix(in srgb, var(--tc) 60%, transparent); transition: transform .3s; }
+    .topic-tile:hover, .topic-tile:focus-visible { transform: translateY(-4px); border-color: var(--tc); box-shadow: 0 14px 30px -16px var(--tc); }
+    .topic-tile:hover img { transform: scale(1.08) rotate(-3deg); }
+    .topic-tile span { min-height: 2.4em; display: flex; align-items: center; }
+    .short-card.spotlit { box-shadow: 0 0 0 4px var(--tc, var(--teal)), 0 18px 40px -12px var(--tc, var(--teal)); }
+    .short-card { transition: box-shadow .3s; }
+
+    /* TikTok: poster first, player loads on tap (avoids TikTok rate limits) */
+    .tt-poster { width: 325px; max-width: 100%; height: 578px; border: 0; border-radius: 14px; cursor: pointer; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+      background: radial-gradient(circle at 30% 20%, rgba(125,194,66,.35), transparent 55%), radial-gradient(circle at 80% 85%, rgba(43,168,177,.45), transparent 55%), #1a2e38; color: #fff; font: inherit; font-weight: 700; transition: transform .25s, box-shadow .25s; }
+    .tt-poster:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -18px rgba(0,0,0,.6); }
+    .tt-poster .tt-avatar { width: 84px; height: 84px; border-radius: 50%; border: 3px solid #fff; }
+    .tt-poster .tt-play { width: 68px; height: 68px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(255,255,255,.15); transition: transform .25s; }
+    .tt-poster:hover .tt-play { transform: scale(1.1); }
+    .tt-poster .tt-play svg { width: 28px; height: 28px; margin-left: 4px; fill: #1a2e38; }
+    .tt-poster small { font-weight: 500; opacity: .8; }
+    #about p a { color: var(--teal-dark); font-weight: 600; text-decoration-color: rgba(43,168,177,.4); text-underline-offset: 3px; }
+    #about p a:hover { color: var(--teal); }
+    /* About: "at a glance" panel replaces the second photo */
+    .about-glance { position: relative; overflow: hidden; align-self: start; position: sticky; top: 110px; border-radius: var(--radius); padding: 1.8rem 1.6rem; display: grid; gap: 1rem; color: #E6F4F8;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='64' viewBox='0 0 56 64'%3E%3Cpath d='M28 2l24 14v28L28 58 4 44V16z' fill='none' stroke='%232BA8B1' stroke-opacity='.18' stroke-width='1.5'/%3E%3Ccircle cx='28' cy='2' r='2.5' fill='%237DC242' fill-opacity='.35'/%3E%3C/svg%3E"),
+        radial-gradient(circle at 15% 10%, rgba(125,194,66,.28), transparent 50%), radial-gradient(circle at 90% 90%, rgba(43,168,177,.45), transparent 55%), #1a2e38;
+      box-shadow: var(--shadow-lg); }
+    .glance-tag { margin: 0; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+    .glance-item { position: relative; display: grid; gap: .2rem; padding: .9rem 1rem; border-radius: 12px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(2px); font-size: .86rem; line-height: 1.45; transition: transform .25s, background .25s; }
+    .glance-item:hover { transform: translateX(4px); background: rgba(255,255,255,.12); }
+    .glance-num { font-size: 1.5rem; font-weight: 800; color: #6FD3DA; line-height: 1.1; }
+    .glance-cap { position: absolute; width: 54px; height: 20px; border-radius: 10px; background: linear-gradient(90deg, var(--teal) 50%, #E6F4F8 50%); opacity: .35; animation: glanceFloat 9s ease-in-out infinite; }
+    .glance-cap.c1 { top: 8%; right: -10px; transform: rotate(-30deg); }
+    .glance-cap.c2 { bottom: 12%; right: 18%; background: linear-gradient(90deg, var(--green) 50%, #E6F4F8 50%); animation-delay: -3s; }
+    .glance-cap.c3 { top: 46%; left: -14px; transform: rotate(40deg); animation-delay: -6s; }
+    @keyframes glanceFloat { 0%,100% { translate: 0 0; rotate: 0deg; } 50% { translate: 6px -12px; rotate: 18deg; } }
+    @media (prefers-reduced-motion: reduce) { .glance-cap { animation: none; } }
+    @media (max-width: 900px) { .about-glance { order: 2; position: relative; top: 0; grid-template-columns: 1fr 1fr; margin-bottom: 2rem; } .glance-tag { grid-column: 1 / -1; } }
+    @media (max-width: 420px) { .about-glance { grid-template-columns: 1fr; } }
+    .tt-frame { width: 325px; max-width: 100%; height: 740px; border: 0; border-radius: 14px; background: #000; }
   </style>
 </head>
 <body>
@@ -655,10 +735,10 @@
       <img src="assets/logo.png" alt="PCCE – Primary Care Clinical Excellence" />
     </a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#speaking">Speaking</a></li>
       <li><a href="#hub">Education</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#contact" class="nav-cta">Get in touch</a></li>
@@ -669,10 +749,10 @@
   </div>
   <div class="nav-mobile" id="navMobile" style="padding:1rem 5% 1.5rem; border-top:1px solid var(--border);">
     <ul style="list-style:none;display:flex;flex-direction:column;gap:1rem;">
-      <li><a href="#about" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">About</a></li>
       <li><a href="#services" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Services</a></li>
       <li><a href="#speaking" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Speaking</a></li>
       <li><a href="#hub" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Education</a></li>
+      <li><a href="#about" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">About</a></li>
       <li><a href="#testimonials" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Reviews</a></li>
       <li><a href="#publications" onclick="toggleMenu()" style="color:var(--mid);font-weight:500;text-decoration:none;">Publications</a></li>
       <li><a href="#contact" onclick="toggleMenu()" style="color:var(--teal);font-weight:600;text-decoration:none;">Get in touch →</a></li>
@@ -721,54 +801,6 @@
       <div class="stat">
         <div class="stat-number" data-count="3.5" data-suffix="m">3.5m</div>
         <div class="stat-label">Patient population served</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── ABOUT ──────────────────────────────────────────────────── -->
-<section id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-img-wrap">
-        <img src="assets/danny.jpg" alt="Danny Bartlett" class="about-img"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="about-img-placeholder" style="display:none;">
-          <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="var(--muted)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-          <span style="font-size:.8rem">Save photo as assets/danny.jpg</span>
-        </div>
-      </div>
-      <div class="about-content">
-        <div class="section-tag">About Danny</div>
-        <h2 class="section-title">Pharmacist. Educator. <span>Strategist.</span></h2>
-        <p>Danny Bartlett is a national Key Opinion Leader and pharmacist consulting across all aspects of primary care, operating at the intersection of medicines optimisation, prescribing policy, workforce education, and healthcare strategy. As <strong>Clinical Lead for the Kent, Surrey &amp; Sussex Primary Care School (NHS England)</strong>, he provides regional strategic oversight of multi-professional education across three Integrated Care Boards serving a combined population of 3.5 million.</p>
-        <p>A <strong>former elected Board Member of the English Pharmacy Board (Royal Pharmaceutical Society, 2023–2026)</strong> and current <strong>Panel Member for the General Pharmaceutical Council's</strong> national accreditation process, Danny contributes at the highest levels of professional governance. He is also <strong>Deputy Course Lead and Senior Lecturer</strong> in Pharmacist Independent Prescribing at the University of Brighton, and co-author of a <a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener">recently published book on medicines management in primary care</a> (Class Professional, 2026).</p>
-        <p>With a publishing record spanning <em>BMJ Open</em>, the <em>Pharmaceutical Journal</em>, and <em>Chemist &amp; Druggist</em>, Danny combines academic rigour with the practical credibility of over a decade on the front line of primary care.</p>
-
-        <div class="creds">
-          <span class="cred-tag">MPharm – University of Reading</span>
-          <span class="cred-tag">Independent Prescriber</span>
-          <span class="cred-tag">PGCert Strategic Leadership</span>
-          <span class="cred-tag">NHS England Clinical Lead</span>
-          <span class="cred-tag">RPS Board Member (2023–2026)</span>
-          <span class="cred-tag">GPhC Panel Member</span>
-          <span class="cred-tag">University of Brighton – Senior Lecturer</span>
-          <span class="cred-tag">Deprescribing Specialist</span>
-          <span class="cred-tag">Parkinson's Medicines Reviews</span>
-        </div>
-
-        <ul class="role-list">
-          <li><strong>Clinical Lead, Primary Care School</strong> – NHS England, KSS (Oct 2024–present)</li>
-          <li><strong>Board Member, English Pharmacy Board</strong> – Royal Pharmaceutical Society (Jun 2023–May 2026)</li>
-          <li><strong>Deputy Course Lead &amp; Senior Lecturer</strong> – University of Brighton, Independent Prescribing (Sep 2022–present)</li>
-          <li><strong>Panel Member – Accreditation &amp; Recognition</strong> – General Pharmaceutical Council (Jun 2025–present)</li>
-          <li><strong>Non-Executive Director</strong> – Morph &amp; The Pharmacist Network (Jun 2025–present)</li>
-        </ul>
-
-        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-          <a href="#contact" class="btn-primary">Work with Danny</a>
-          <a href="https://outlook.office.com/bookwithme/user/c87cc005ce2d49d09e9eb81901bd0b46@pcce.co.uk?anonymous&ep=signature&ismsaljsauthenabled" target="_blank" rel="noopener" class="btn-green">Book a meeting</a>
-        </div>
       </div>
     </div>
   </div>
@@ -989,8 +1021,8 @@
       <p>PCCE creates original clinical education content &#8212; and partners with organisations to co-create resources that work in their context, for their teams, and towards their goals. Not just a speaker. Not just a content creator. Both.</p>
       <span class="hub-pragmatic-tagline">No committees. No agency delays. No markup. Working directly with Danny means faster decisions, direct access to the thinking behind the content, and clinical education that ships &#8212; created at the clinical coalface and tapped into practising clinicians.</span>
       <a href="https://outlook.office.com/bookwithme/user/c87cc005ce2d49d09e9eb81901bd0b46@pcce.co.uk?anonymous&ep=signature&ismsaljsauthenabled" target="_blank" rel="noopener" class="hub-pragmatic-btn">
-        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        Book time with me &rarr; you&rsquo;ll get a Teams invite automatically
+        <span class="teams-badge" role="img" aria-label="Microsoft Teams"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="24.5" cy="8.5" r="3.5" fill="#7B83EB"/><path d="M20 13.5h9a1.5 1.5 0 0 1 1.5 1.5v6a5 5 0 0 1-10 0z" fill="#7B83EB"/><circle cx="15" cy="7" r="4.5" fill="#5059C9"/><path d="M9 12h13a1.5 1.5 0 0 1 1.5 1.5V21a7 7 0 0 1-14 0z" fill="#5059C9"/><rect x="2" y="9" width="15" height="15" rx="2.5" fill="#4B53BC"/><path d="M5.5 12.8h8v2.1h-2.9v6.6H8.4v-6.6H5.5z" fill="#fff"/></svg></span>
+        <span>Book time with me<small>A Microsoft Teams invite is sent automatically</small></span>
       </a>
     </div>
     <div class="hub-why animate animate-delay-2">
@@ -1000,7 +1032,10 @@
         </div>
         <h3>Visual &amp; under 3 minutes</h3>
         <p>Animation-led explainers on the <strong>@ScienceMadeVisual</strong> YouTube channel &#8212; complex pharmacology and primary care concepts broken into visuals that actually stick.</p>
-        <a href="#education" class="learn-more">Watch the Shorts &#8594;</a>
+        <a href="#education" class="hub-preview" aria-label="Watch the Shorts">
+          <div class="yt-strip" aria-hidden="true"><div><img loading="lazy" src="https://i.ytimg.com/vi/_06TcN-B6sw/hqdefault.jpg" alt=""></div><div><img loading="lazy" src="https://i.ytimg.com/vi/EvnCz4aHabw/hqdefault.jpg" alt=""></div><div><img loading="lazy" src="https://i.ytimg.com/vi/1_SOTHTNIhA/hqdefault.jpg" alt=""></div></div>
+          <div class="hub-preview-foot"><span><img src="assets/smv-logo.png" alt="">Watch the Shorts</span><span class="arrow" aria-hidden="true">&#8594;</span></div>
+        </a>
       </div>
       <div class="hub-why-card">
         <div class="hub-why-icon">
@@ -1008,7 +1043,10 @@
         </div>
         <h3>The reference clinicians reach for</h3>
         <p>Co-author of <em>Medicines Management: A Quick Reference Guide for AHPs in Primary Care</em> (Class Professional, 2026) &#8212; evidence-based, practical, and written for the clinic, not the lecture hall.</p>
-        <a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener" class="learn-more">Order the book &#8594;</a>
+        <a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener" class="hub-preview" aria-label="Order the book">
+          <div class="book-peek"><img loading="lazy" src="assets/pub-book.png" alt="Medicines Management book cover"><p>Class Professional, 2026. A quick reference guide for AHPs in primary care.</p></div>
+          <div class="hub-preview-foot"><span>Order the book</span><span class="arrow" aria-hidden="true">&#8594;</span></div>
+        </a>
       </div>
       <div class="hub-why-card">
         <div class="hub-why-icon">
@@ -1016,7 +1054,7 @@
         </div>
         <h3>Live, tailored, and evidence-led</h3>
         <p>150+ national speaking engagements. Bespoke clinical education workshops for GP practices, PCNs, and NHS organisations &#8212; medicines optimisation to prescribing safety.</p>
-        <a href="#speaking" class="learn-more">See speaking topics &#8594;</a>
+        <a href="#speaking" class="hub-link">See speaking topics <span aria-hidden="true">&#8594;</span></a>
       </div>
     </div>
     <div class="hub-collab animate animate-delay-3">
@@ -1065,8 +1103,8 @@
         Also on TikTok
       </div>
       <div class="tiktok-embeds">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sciencemadevisual/video/7667895849128594711" data-video-id="7667895849128594711"><section><a href="https://www.tiktok.com/@sciencemadevisual" target="_blank" rel="noopener">@sciencemadevisual</a></section></blockquote>
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sciencemadevisual/video/7667898325093387542" data-video-id="7667898325093387542"><section><a href="https://www.tiktok.com/@sciencemadevisual" target="_blank" rel="noopener">@sciencemadevisual</a></section></blockquote>
+        <button type="button" class="tt-poster" data-tt="7667895849128594711" aria-label="Play this Short on TikTok"><img class="tt-avatar" src="assets/smv-logo.png" alt=""><span class="tt-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>Science Made Visual<small>Tap to play on TikTok</small></button>
+        <button type="button" class="tt-poster" data-tt="7667898325093387542" aria-label="Play this Short on TikTok"><img class="tt-avatar" src="assets/smv-logo.png" alt=""><span class="tt-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>Science Made Visual<small>Tap to play on TikTok</small></button>
       </div>
     </div>
 
@@ -1080,6 +1118,54 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.6c.27 0 .53.04.78.12V9.66a5.7 5.7 0 0 0-.78-.05 5.7 5.7 0 1 0 5.7 5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.26-1.48z"/></svg>
           Follow on TikTok
         </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ──────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <aside class="about-glance" aria-label="Danny at a glance">
+        <span class="glance-cap c1" aria-hidden="true"></span><span class="glance-cap c2" aria-hidden="true"></span><span class="glance-cap c3" aria-hidden="true"></span>
+        <p class="glance-tag">At a glance</p>
+        <div class="glance-item"><span class="glance-num">3.5m</span><span>people across three ICBs, as Clinical Lead for the KSS Primary Care School</span></div>
+        <div class="glance-item"><span class="glance-num">RPS</span><span>Elected English Pharmacy Board member, 2023 to 2026</span></div>
+        <div class="glance-item"><span class="glance-num">GPhC</span><span>Panel member for national accreditation</span></div>
+        <div class="glance-item"><span class="glance-num">2026</span><span>Co-author, Medicines Management (Class Professional)</span></div>
+      </aside>
+      <div class="about-content">
+        <div class="section-tag">About Danny</div>
+        <h2 class="section-title">Pharmacist. Educator. <span>Strategist.</span></h2>
+        <p>Danny Bartlett is a national Key Opinion Leader and pharmacist consulting across all aspects of primary care, operating at the intersection of medicines optimisation, prescribing policy, workforce education, and healthcare strategy. As <strong>Clinical Lead for the Kent, Surrey &amp; Sussex Primary Care School (NHS England)</strong>, he provides regional strategic oversight of multi-professional education across three Integrated Care Boards serving a combined population of 3.5 million.</p>
+        <p>A <strong>former elected Board Member of the English Pharmacy Board (Royal Pharmaceutical Society, 2023–2026)</strong> and current <strong>Panel Member for the General Pharmaceutical Council's</strong> national accreditation process, Danny contributes at the highest levels of professional governance. He is also <strong>Deputy Course Lead and Senior Lecturer</strong> in Pharmacist Independent Prescribing at the University of Brighton, and co-author of a <a href="https://www.classprofessional.co.uk/books-ebooks/recently-published/medicines-management-preparing-for-independent-prescribing" target="_blank" rel="noopener">recently published book on medicines management in primary care</a> (Class Professional, 2026).</p>
+        <p>With a publishing record spanning <em>BMJ Open</em>, the <em>Pharmaceutical Journal</em>, and <em>Chemist &amp; Druggist</em>, Danny combines academic rigour with the practical credibility of over a decade on the front line of primary care.</p>
+
+        <div class="creds">
+          <span class="cred-tag">MPharm – University of Reading</span>
+          <span class="cred-tag">Independent Prescriber</span>
+          <span class="cred-tag">PGCert Strategic Leadership</span>
+          <span class="cred-tag">NHS England Clinical Lead</span>
+          <span class="cred-tag">RPS Board Member (2023–2026)</span>
+          <span class="cred-tag">GPhC Panel Member</span>
+          <span class="cred-tag">University of Brighton – Senior Lecturer</span>
+          <span class="cred-tag">Deprescribing Specialist</span>
+          <span class="cred-tag">Parkinson's Medicines Reviews</span>
+        </div>
+
+        <ul class="role-list">
+          <li><strong>Clinical Lead, Primary Care School</strong> – NHS England, KSS (Oct 2024–present)</li>
+          <li><strong>Board Member, English Pharmacy Board</strong> – Royal Pharmaceutical Society (Jun 2023–May 2026)</li>
+          <li><strong>Deputy Course Lead &amp; Senior Lecturer</strong> – University of Brighton, Independent Prescribing (Sep 2022–present)</li>
+          <li><strong>Panel Member – Accreditation &amp; Recognition</strong> – General Pharmaceutical Council (Jun 2025–present)</li>
+          <li><strong>Non-Executive Director</strong> – Morph &amp; The Pharmacist Network (Jun 2025–present)</li>
+        </ul>
+
+        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="#contact" class="btn-primary">Work with Danny</a>
+          <a href="https://outlook.office.com/bookwithme/user/c87cc005ce2d49d09e9eb81901bd0b46@pcce.co.uk?anonymous&ep=signature&ismsaljsauthenabled" target="_blank" rel="noopener" class="btn-green">Book a meeting</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1467,7 +1553,7 @@
     const hero = document.getElementById('hero');
     const els = [...box.children];
     const TOP = 94; // keep clear of the fixed nav bar
-    let W = 0, H = 0, running = false, ptr = null;
+    let W = 0, H = 0, running = false, ptr = null, zones = [];
     const P = els.map((el, i) => {
       const [, , x, y, , r] = PILLS[i];
       return { el, hx: parseFloat(x) / 100, hy: parseFloat(y) / 100, x: 0, y: 0, vx: 0, vy: 0, a: r, va: 0, w: 0, h: 0, held: false, t: i * 1.3 };
@@ -1477,6 +1563,12 @@
       W = box.clientWidth; H = box.clientHeight;
       P.forEach(p => { p.w = p.el.getBoundingClientRect().width; p.h = p.el.getBoundingClientRect().height;
         if (fresh) { p.x = p.hx * W; p.y = Math.max(TOP, p.hy * H); } });
+      // Keep-out zones: the hero stats. A pill whose home sits behind one moves its home just below it
+      const br = box.getBoundingClientRect();
+      zones = [...document.querySelectorAll('#hero .stat')].map(el => { const r = el.getBoundingClientRect(); return { l: r.left - br.left - 16, t: r.top - br.top - 12, r: r.right - br.left + 16, b: r.bottom - br.top + 12 }; });
+      P.forEach(p => { const hx = p.hx * W, hy = Math.max(TOP, p.hy * H);
+        const z = zones.find(z => hx + p.w > z.l && hx < z.r && hy + p.h > z.t && hy < z.b);
+        p.homeY = z ? z.b + 6 : hy; if (fresh && z) p.y = p.homeY; });
     };
     box.classList.add('live');
     measure();
@@ -1522,7 +1614,8 @@
             }
           }
           const sp = Math.hypot(p.vx, p.vy);
-          if (sp < 2) { p.vx += (p.hx * W - p.x) * .0009; p.vy += (Math.max(TOP, p.hy * H) - p.y) * .0009; } // drift home when calm
+          if (sp < 2) { p.vx += (p.hx * W - p.x) * .0009; p.vy += (p.homeY - p.y) * .0009; }
+          for (const z of zones) if (p.x + p.w > z.l && p.x < z.r && p.y + p.h > z.t && p.y < z.b) p.vy += .9; // slide out below the stats // drift home when calm
           p.t += .016; p.vy += Math.sin(p.t) * .015; // gentle bob
           p.vx *= .965; p.vy *= .965; p.va *= .95;
           p.x += p.vx; p.y += p.vy; p.a += p.va;
@@ -1718,6 +1811,50 @@
     });
   })();
 
+
+  // ── Topic picture buttons: one per Short that has a picture; click jumps to it ──
+  (function topicTiles() {
+    const TILES = [
+      { img: 'ccb',        label: 'Calcium channel blockers',  tc: '#E05A4B', match: /calcium channel/i },
+      { img: 'statins',    label: 'Statins',                   tc: '#E05A4B', match: /statin/i },
+      { img: 'macrolides', label: 'Macrolide antibiotics',     tc: '#1F9AA3', match: /macrolide/i },
+      { img: 'glp1',       label: 'GLP-1 agonists',            tc: '#D08A12', match: /glp-1/i },
+      { img: 'careldopa',  label: 'Co-careldopa',              tc: '#7A63D8', match: /careldopa/i },
+      { img: 'sglt2',      label: 'SGLT2 inhibitors',          tc: '#D08A12', match: /sglt2/i },
+      { img: 'ssri',       label: 'SSRIs & SNRIs',             tc: '#D0478C', match: /ssri/i },
+      { img: 'evidence',   label: 'Antidepressant evidence',   tc: '#D0478C', match: /myths vs studies/i },
+      { img: 'leadership', label: 'Clinical leadership',       tc: '#3D7FD1', match: /expertise around/i },
+      { img: 'retain',     label: 'Retaining senior clinicians', tc: '#3D7FD1', match: /retain senior/i }
+    ];
+    const subs = document.querySelectorAll('#eduSections .edu-sub');
+    EDU_SERIES.forEach((series, i) => {
+      const sub = subs[i]; if (!sub) return;
+      const tiles = TILES.map(t => ({ t, v: series.shorts.find(v => t.match.test(v.title.replace(/&amp;/g, '&'))) })).filter(x => x.v);
+      if (!tiles.length) return;
+      const row = document.createElement('div');
+      row.className = 'topic-tiles';
+      row.setAttribute('role', 'list');
+      row.innerHTML = tiles.map(({ t, v }) => `<button type="button" class="topic-tile" role="listitem" style="--tc:${t.tc}" data-id="${v.id}"><img src="assets/topics/${t.img}.jpg" alt="" width="84" height="84" loading="lazy" decoding="async"><span>${t.label}</span></button>`).join('');
+      sub.querySelector('.edu-sub-blurb').after(row);
+      row.addEventListener('click', e => {
+        const b = e.target.closest('.topic-tile'); if (!b) return;
+        const card = sub.querySelector(`.short-card[data-id="${b.dataset.id}"]`); if (!card) return;
+        card.style.setProperty('--tc', b.style.getPropertyValue('--tc'));
+        card.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+        card.classList.add('spotlit');
+        setTimeout(() => card.classList.remove('spotlit'), 2200);
+      });
+    });
+  })();
+
+  // ── TikTok: load the player only when someone taps a poster ──
+  document.querySelectorAll('.tt-poster').forEach(btn => btn.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.className = 'tt-frame'; f.title = 'TikTok video player'; f.allow = 'autoplay; encrypted-media; fullscreen';
+    f.src = `https://www.tiktok.com/embed/v2/${btn.dataset.tt}`;
+    btn.replaceWith(f);
+  }));
+
   // ── LinkedIn bubble: show when scrolling into publications / contact / footer ──
   (function () {
     const bubble = document.getElementById('linkedinWrap');
@@ -1731,7 +1868,5 @@
     updateBubble();
   })();
 </script>
-<!-- TikTok embed renderer -->
-<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
